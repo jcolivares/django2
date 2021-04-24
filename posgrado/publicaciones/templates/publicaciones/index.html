@@ -1,0 +1,31 @@
+{% extends "publicaciones/base.html" %} 
+{% block page_content %}      
+<main class="flex-shrink-0">
+    <div class="container">
+      <h1 class="mt-5">Publicaciones de Posgrado de Electrónica</h1>
+      <mark>
+        Hasta el momento
+    </mark>
+    </div>
+  </main>  
+
+<section>
+     <div class="mw6 center pa3 sans-serif">   
+        {% for p in pubs %}             
+        <div class="pa2 mb3 striped--near-white">                
+             <div class="pl2">                     
+                <p class="mb2">Fecha: {{ p.fecha }} </p>                    
+                <p class="mb2">Tipo: {{ p.tipo }}</p>                    
+                 <p class="mb2">Vin: {{ p.autor }}</p>                 
+            </div>             
+        </div>         
+    {% endfor %}     
+</section>
+
+
+<!--
+titulo = models.CharField(max_length=250)
+nombre_publicacion = models.CharField(max_length=200, null=True)
+-->
+
+{% endblock %}
